@@ -1,0 +1,194 @@
+{
+  "home:fis-conf-bak.js": {
+    "id": "home:fis-conf-bak.js",
+    "type": "js",
+    "hash": "",
+    "url": "/fis-conf-bak.js",
+    "deps": {},
+    "size": 1.173828125,
+    "pages": {},
+    "loadType": "",
+    "priority": "",
+    "pv": 0,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/fis-conf-bak.js",
+    "mergedStatic": [
+      "home:fis-conf-bak.js"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:page/index.tpl": {
+    "id": "home:page/index.tpl",
+    "type": "tpl",
+    "hash": "",
+    "url": "/home/page/index.tpl",
+    "deps": {},
+    "size": 0.64453125,
+    "pages": {},
+    "loadType": "",
+    "priority": "",
+    "pv": 1,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/page/index.tpl",
+    "mergedStatic": [
+      "home:page/index.tpl"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:static/index/index.css": {
+    "id": "home:static/index/index.css",
+    "type": "css",
+    "hash": "",
+    "url": "/static/index/index.css",
+    "deps": {},
+    "size": 0.291015625,
+    "pages": {
+      "1c41ea2": 1
+    },
+    "loadType": "sync",
+    "priority": "",
+    "pv": 1,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/static/index/index.css",
+    "mergedStatic": [
+      "home:static/index/index.css"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:static/lib/css/bootstrap-responsive.css": {
+    "id": "home:static/lib/css/bootstrap-responsive.css",
+    "type": "css",
+    "hash": "",
+    "url": "/static/lib/css/bootstrap-responsive.css",
+    "deps": {},
+    "size": 4.142578125,
+    "pages": {
+      "1c41ea2": 1
+    },
+    "loadType": "sync",
+    "priority": "",
+    "pv": 1,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/static/lib/css/bootstrap-responsive.css",
+    "mergedStatic": [
+      "home:static/lib/css/bootstrap-responsive.css"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:static/lib/css/bootstrap.css": {
+    "id": "home:static/lib/css/bootstrap.css",
+    "type": "css",
+    "hash": "",
+    "url": "/static/lib/css/bootstrap.css",
+    "deps": {},
+    "size": 17.953125,
+    "pages": {
+      "1c41ea2": 1
+    },
+    "loadType": "sync",
+    "priority": "",
+    "pv": 1,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/static/lib/css/bootstrap.css",
+    "mergedStatic": [
+      "home:static/lib/css/bootstrap.css"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:static/lib/js/html5.js": {
+    "id": "home:static/lib/js/html5.js",
+    "type": "js",
+    "hash": "",
+    "url": "/static/lib/js/html5.js",
+    "deps": {},
+    "size": 1.2265625,
+    "pages": {},
+    "loadType": "",
+    "priority": "",
+    "pv": 0,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/static/lib/js/html5.js",
+    "mergedStatic": [
+      "home:static/lib/js/html5.js"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:static/lib/js/jquery-1.10.1.js": {
+    "id": "home:static/lib/js/jquery-1.10.1.js",
+    "type": "js",
+    "hash": "",
+    "url": "/static/lib/js/jquery-1.10.1.js",
+    "deps": {},
+    "size": 79.572265625,
+    "pages": {
+      "1c41ea2": 1
+    },
+    "loadType": "sync",
+    "priority": "",
+    "pv": 1,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/static/lib/js/jquery-1.10.1.js",
+    "mergedStatic": [
+      "home:static/lib/js/jquery-1.10.1.js"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:widget/section/section.css": {
+    "id": "home:widget/section/section.css",
+    "type": "css",
+    "hash": "",
+    "url": "/widget/section/section.css",
+    "deps": {},
+    "size": 0.4248046875,
+    "pages": {},
+    "loadType": "",
+    "priority": "",
+    "pv": 0,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/widget/section/section.css",
+    "mergedStatic": [
+      "home:widget/section/section.css"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  },
+  "home:widget/slogan/slogan.css": {
+    "id": "home:widget/slogan/slogan.css",
+    "type": "css",
+    "hash": "",
+    "url": "/widget/slogan/slogan.css",
+    "deps": {
+      "deps": [
+        "home:widget/section/section.css"
+      ]
+    },
+    "size": 0.5517578125,
+    "pages": {},
+    "loadType": "",
+    "priority": "",
+    "pv": 0,
+    "sub_pv": {},
+    "module": "home",
+    "subpath": "/widget/slogan/slogan.css",
+    "mergedStatic": [
+      "home:widget/slogan/slogan.css"
+    ],
+    "benefit": 0,
+    "packageType": "auto"
+  }
+}

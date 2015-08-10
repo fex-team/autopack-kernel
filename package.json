@@ -1,0 +1,24 @@
+{
+  "name": "autopack-kernel",
+  "version": "0.0.1",
+  "description": "static resource autopack kernel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fex-team/autopack-kernel.git"
+  },
+  "keywords": [
+    "fis",
+    "autopack",
+    "pack"
+  ],
+  "author": "fis",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/fex-team/autopack-kernel.git/issues"
+  },
+  "homepage": "https://github.com/fex-team/autopack-kernel.git"
+}

@@ -1,0 +1,16 @@
+/.idea
+/.npmignore
+._*
+node_modules/
+log_data/
+plugin
+
+.DS_Store
+*.db
+*.bak
+*.tmp
+*.cmd
+~*
+
+upload.py
+nohup.out

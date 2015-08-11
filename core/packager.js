@@ -24,6 +24,9 @@ module.exports.calPackage = function(resources,options){
     //根据手工配置筛选出资源
     var manualResult = mergeDefaultPackage(resources, options.defaultPack);
 
+    //删除pv为0的资源
+    options.removeUnuse && removeUnuseRes(resources,options.baseResources);
+
     //将资源根据类型分组
     var newResources = partAndFilterResources(resources,options.staticType,
                         options.partKeys,options.modules),
@@ -32,7 +35,7 @@ module.exports.calPackage = function(resources,options){
     newResources = sortByPv(newResources);
 
     //将基础包pv设为最高，使基础包优先加载
-    fixBasejsPV(newResources,options.baseResources);
+    fixBasePV(newResources,options.baseResources);
 
     //计算打包配置
     util.map(newResources, function(packageKey, partResource){
@@ -58,17 +61,33 @@ module.exports.calPackage = function(resources,options){
 
 
 //基础文件pv可能统计不到，需要修正到最高PV
-function fixBasejsPV(newResources,baseResources){
+//最终删除pv为0的资源(废弃资源)
+function fixBasePV(newResources,baseResources,removeUnuse){
+    var unuses = [];
     util.map(newResources, function(key, resources){
-        for(var i = 0; i < resources.length; i++){
-            var subpath = resources[i]['id'].toLowerCase();
+        util.map(resources,function(index,res){
+            var subpath = res['id'].toLowerCase();
             var fileName = subpath.split("/").pop();
             if(baseResources.indexOf(fileName) > -1 || baseResources.indexOf(subpath) > -1){
-                resources[i].set("pv", resources[0].get("pv"));
-                resources[i].set("pages", resources[0].get("pages"));
+                res.set("pv", resources[0].get("pv"));
+                res.set("pages", resources[0].get("pages"));
+            }else if(removeUnuse && res && res.get('pv') == 0){
+                unuses.push(res['id']);
             }
-        }
+        })
     });
+}
+
+//删除pv为0的资源
+function removeUnuseRes(resources,baseResources){
+    util.map(resources,function(id,res){
+        var subpath = res['id'].toLowerCase();
+        var fileName = subpath.split("/").pop();
+        if(baseResources.indexOf(fileName) < 0 && baseResources.indexOf(subpath) < 0 
+            && res.get('pv') == 0){
+            delete resources[id];
+        }
+    })
 }
 
 
@@ -111,7 +130,7 @@ function createPackConf(mergeRes,resources,baseRes,defaultPack){
                 //自定义包使用用户原生配置不再自动生成，可以保证自定义包的顺序
                 if(pkgFile.get("packageType") != "manual"){
                     var files = pkgFile.get("mergedStatic"),
-                        packageKey = "pkg/" + packageKeyPrefix + "_" + index + "_" +  "." + type;
+                        packageKey = "pkg/" + packageKeyPrefix + "_" + index + "." + type;
                     if(files.length){
                         packResult[packageKey] = [];
                         util.map(files, function(index, file){

@@ -9,7 +9,7 @@ var autoPackger = {
     //默认参数
     options : {
         //页面运行终端
-        platform    : 'mobile', 
+        platform    : 'pc', 
 
         //RTT时间 单位秒
         rtt         : 1, 
@@ -26,15 +26,17 @@ var autoPackger = {
         //自定义打包配置
         defaultPack : {}, 
 
-        //基础JS这些js的PV应该是最高的，而且打包的时候需要放在前面
-        baseResources  : ['mod.js','require.js','esl.js']
+        //基础资源，这些资源的PV应该是最高的，而且打包的时候需要放在前面
+        baseResources  : ['mod.js','require.js','esl.js'],
+
+        //是否打包配置中移除未使用的资源(pv为0且不是基础文件)
+        removeUnuse: true
 
         
     },
 
     //初始化参数
     init : function(options){
-        console.log("init options");
         for(var i in options){   
             if(this.options.hasOwnProperty(i)){
                 this.options[i] = options[i];
@@ -54,7 +56,6 @@ var autoPackger = {
      * @return {[type]}         [打包结果]
      */
     pack : function(files,options){
-        
         options && this.init(options);
         var resources = {};
         //转为File对象方便计算
@@ -63,6 +64,7 @@ var autoPackger = {
             res['pages']    = file['pages'];
             res['pv']       = file['pv'];
             res['priority'] = file['priority']; //优先级
+            res['loadType'] = file['loadType']; //加载方式
             resources[file['id']] = res;
         })
         return packager.calPackage(resources,this.options);

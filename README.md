@@ -215,7 +215,7 @@ var result = autoPackger.pack(files,{
 
 FIS中您可以通过此插件实现后端模板的静态资源自动合并方案：
 
-[fis-prepackager-autopack](https://github.com/fex-team/fis-prepackager-autopack)
+[fis-prepackager-auto-pack](https://github.com/fex-team/fis-prepackager-auto-pack)
 
 其他构建环境通过上述方案获取配置即可。
 
